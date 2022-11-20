@@ -404,13 +404,10 @@ consultarmultasusuario_1_svc(char **argp, struct svc_req *rqstp)
 	int i;
 	for (i=0 ;  i<posMulta ; i++)
 	{
-		printf("\nIteró %d veces", i+1);
 		if (strcmp(vectorDeMultas[i].usuario, *argp)==0)
 		{
-			printf("\nEntró al if de comparación del usuario");
             if(vectorDeMultas[i].valorMulta>20000)
 			{
-				printf("\nEntró al if de comparación de multa mayor a 20000");
 				numMultas = vectorDeMultas[i].valorMulta;
 				break;
 			}
@@ -653,7 +650,7 @@ int calcularMulta(datos_fecha fecha_plazo_max, datos_fecha fecha_devolucion)
 	}
 	else if( (dias_atraso>=4) && (dias_atraso<=8) )
 	{
-		multa = 30000 + ( 1000*(dias_atraso - 3) );
+		multa = 10000 + ( 1000*(dias_atraso - 3) );
 	}
 	else if( dias_atraso>8 )
 	{
